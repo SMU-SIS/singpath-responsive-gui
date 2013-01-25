@@ -44,8 +44,7 @@
             </ul>
         </div>
         <div class="span4">
-
-            <ul id="targetList" dnd-between-list="model,sourceList" ng-class="{&#39;minimalList&#39;:sourceEmpty()}" class="ui-sortable">
+            <ul id="targetList" dnd-between-list="model,sourceList" ng-class="{&#39;minimalList&#39;:sourceEmpty()&#39;:check()}" class="ui-sortable">
                 <!-- ngRepeat: item in model -->
                 <li class="alert alert-info nomargin ng-scope ng-binding" ng-repeat="item in model">{{item.value}}</li>
             </ul>
@@ -54,14 +53,13 @@
     
     Source: <pre ng-bind="source | json"></pre>
     Model: <pre ng-bind="model | json"></pre>
-
 </div>
-
 
 <!-- load all the scripts -->
 <script src="./js/jquery.min.js" type="text/javascript"></script>
 <script src="./js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./js/jquery.ui.touch-punch.min.js"></script>
 <!-- load the app scripts -->
 
 <script src="./lib/angular/angular.js" type="text/javascript"></script>

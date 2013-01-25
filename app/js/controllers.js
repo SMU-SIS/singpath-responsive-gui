@@ -14,7 +14,7 @@ function IndexController($scope,$resource,$location,$window){
         $window._gaq.push(['_trackPageview', $scope.clicked]);
         //This is how you log to the SingPath backend.
         $scope.Log = $resource('/jsonapi/log_access');
-        var item = new $scope.Log({"page":"index1.html",
+        var item = new $scope.Log({"page":"index.html",
                                    "event":$scope.clicked,
                                    "date":1357529747177});
         $scope.item = item.$save(); 
@@ -40,11 +40,11 @@ function GameController($scope,$resource){
 //Just create methods to pass in and set the model and id. 
 function StoryController($scope,$resource){
     //$scope.location = $location;
-		$scope.StoryModel = $resource('/jsonapi/stories');
+    $scope.StoryModel = $resource('/jsonapi/stories');
     
     $scope.story = {"name":"My Cool Story", 
                     "url": "ae_DKNwK_ms"};  
-		//A method to fetch a generic model and id. 
+    //A method to fetch a generic model and id. 
     $scope.fetch_stories = function(){
           $scope.StoryModel.query({}, function(response){
               $scope.stories = response;

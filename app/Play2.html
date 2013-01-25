@@ -10,33 +10,47 @@
     <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- added by Haja -->
+    <link href="../assets/css/style.css" rel="stylesheet">
     <style>
 
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
 
-    h2,h4,h3,h5{
-      color:#006dcc;
+    body {
+      padding-bottom: 40px;
+      background-image:url('img/bg-body.gif');
+      color: #5a5a5a;
     }
 
-    p{
-      color:white;
+
+    /* Edited by Haja*/
+    .btn-custom1 {
+      display:inline-block;
+      color:#fff;
+      padding:8px 16px;
+      background:#499500;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+        box-shadow:0 1px 2px #c5c2a9;
+      -moz-box-shadow: 0 1px 2px #c5c2a9;
+      -webkit-box-shadow:0 1px 2px #c5c2a9;
     }
 
-    #standardFrame{
-      height: 80px;
-      width:  150px;
+    .btn-extralarge {
+      padding: 30px 54px;
+      font-size: 24px;
+      -webkit-border-radius: 6px;
+         -moz-border-radius: 6px;
+              border-radius: 6px;
     }
-    #padFrame{
-      margin-top:10px;
-        height: 200px;
-        width: 225px;
-    }
-    #leftIcon{
-      height: 300px;
-      width:  200px;
-    }
+   
+    /* end of editing*/
+
+
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
@@ -72,13 +86,71 @@
 
     /* Navbar links: increase padding for taller navbar */
     .navbar .nav > li > a {
-      padding: 15px 15px;
+      padding: 15px 20px;
     }
 
     /* Offset the responsive button for proper vertical alignment */
     .navbar .btn-navbar {
       margin-top: 10px;
     }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+      height: 260px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+      
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+    }
+
+    .carousel .item {
+
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
 
     /* MARKETING CONTENT
     -------------------------------------------------- */
@@ -94,6 +166,7 @@
       margin-left: 10px;
       margin-right: 10px;
     }
+
 
     /* Featurettes
     ------------------------- */
@@ -125,18 +198,12 @@
       letter-spacing: -1px;
     }
 
-    #smallBoard{
-      display:none;
-    }
-    #largeBoard{
-      display:block;
-    }
 
 
     /* RESPONSIVE CSS
     -------------------------------------------------- */
 
-    @media (max-width: 1024px) {
+    @media (max-width: 979px) {
 
       .container.navbar-wrapper {
         margin-bottom: 0;
@@ -146,6 +213,15 @@
         border-radius: 0;
         margin: -20px 0;
       }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
       .featurette {
         height: auto;
         padding: 0;
@@ -157,31 +233,40 @@
         max-width: 40%;
         margin: 0 auto 20px;
       }
-      iframe{
-        margin-top:10px;
-        height: 300px;
-        width: 90%;
-      }
-
-      h2{font-size:30px;}
-      h3{font-size:25px;}
-      h4 {font-size:20px;}
-      h5 {font-size:15px;}
-
-      #largeBoard{
-        display:none;
-      }
-      #smallBoard{
-        display:block;
-      }
-
     }
 
 
-    @media (max-width: 800px) {
+    @media (max-width: 767px) {
 
       .navbar-inner {
         margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+        height:relative;
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
       }
 
       .marketing .span4 + .span4 {
@@ -196,26 +281,6 @@
         line-height: 1.5;
       }
 
-      iframe{
-        height: 90%px;
-        width: 90%;
-      }
-
-      #largeComment{
-        display:none;
-      }
-
-      #standardFrame{
-        height: 200px;
-        width:  150px;
-      }
-    }
-
-    @media (max-width: 800px) {
-      iframe{
-        height: 80%px;
-        width: 80%;
-      }
     }
     </style>
 
@@ -230,9 +295,9 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
-    </head>
+  </head>
 
-    <body ng-controller="PlayerController">
+  <body ng-controller="PlayerController">
 
 
 
@@ -250,14 +315,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">SingPath</a>
+            <a class="brand active" href="HomePage.html">Home</a>
+            <a class="brand" href="#">Quest</a>
+            <a class="brand" href="#">Practice</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="#">Quests</a></li>
-                <li><a href="#practice">Practice</a></li>
-                <li><a href="#about">Teaching</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#about">Teach</a></li>
+                <li><a href="#about">Create</a></li>
 
                 
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
@@ -284,96 +350,130 @@
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
 
-
-
-    <div class="container" id="largeBoard">
-<!-- START THE FEATURETTES -->
-      <br/><br/><br/><br/><br/>
-       <!-- /END THE FEATURETTES -->
-          <h3 align="center">Coding Hero's Path</h3>
-
-          <div id="leftIcon" class="span4" align="left"><img class="img-rounded" src="../assets/img/newStory.png"></img>
-          <button class="btn btn-large btn-block btn-primary" type="button">Start</button>
-          <button class="btn btn-large btn-block" type="button">Back To Home</button></div>
-          <div class="span2">&nbsp;</div>
-
-          <div class="span6" align="right">
-            <div class="row">
-              <div class="span2"><br/><iframe id="standardFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-              <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-              <div class="span2"><br/><iframe id="standardFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-            </div>
-
-            <div class="row">
-              <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-              <div class="span2"><br/><iframe id="standardFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-              <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-            </div>
-
-            <div class="row">
-              <div class="span2"><br/><iframe id="standardFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-              <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-              <div class="span2"><br/><iframe id="standardFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-            </div> 
-          </div>  
-    </div>
-
-    <div class="container" id="smallBoard">
-<!-- START THE FEATURETTES -->
-      <br/><br/><br/><br/><br/>
-       <!-- /END THE FEATURETTES -->
-          <h2 align="center">Coding Hero's Path</h2>
-          <div class="row">
-            <div class="span8 offset2">
-              <div class="span8"><img class="img-rounded" src="../assets/img/newStory.png"></img>
-              <button class="btn btn-large btn-block btn-primary" type="button">Start</button>
-              <button class="btn btn-large btn-block" type="button">Back To Home</button></div>
-              <div class="span2">&nbsp;</div>
-
+    <br>
+    <br>
+    <br>
+    <div align="center" font-color: #006dcc;><h3>Pick a Story!</h3></div>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner" align="center">
+        <div class="item active" align="center">
+          <div class="container" >
+              <!-- Three columns of text below the carousel -->
               <div class="row">
-              <div class="span8" align="center">
-                <div class="row">
-                  <div class="span4"><br/><iframe id="padFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-                  <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-                </div>
-
-                <div class="row" align="center">
-                  <div class="span4"><br/><iframe id="padFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-                  <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-                </div>
-
-                <div class="row" align="center">
-                  <div class="span4"><br/><iframe id="padFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-                  <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-                </div>
-
-                <div class="row" align="center">
-                  <div class="span4"><br/><iframe id="padFrame" class="thumbnail" src="http://www.youtube.com/embed/ADjIt6ZbqKU" frameborder="0" allowfullscreen></iframe></div>
-                  <div class="span2"><br/><a href="practice.html"><img id="standardFrame" class="thumbnail" src="../assets/img/question.jpg"></a></div>
-                </div>
-
-                <div class="row" align="center">
-                  <div class="span4 offset2"><br/><img id="padFrame" class="thumbnail" src="../assets/img/question.jpg"></img></div>
-                </div>
-              </div>
-            </div>
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p1.jpg" alt="" height="250"><br>
+                  <h4>Story 1</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p2.jpg" alt="" height="250"><br>
+                  <h4>Story 2</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p3.jpg" alt="" height="250"><br>
+                  <h4>Story 3</h4>
+                </div><!-- /.span4 -->
+              </div><!-- /.row -->
           </div>
         </div>
-    </div>
+        <div class="item">
+         <div class="container" >
+              <!-- Three columns of text below the carousel -->
+              <div class="row">
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p4.jpg" alt="" height="250"><br>
+                  <h4>Story 4</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p5.jpg" alt="" height="250"><br>
+                  <h4>Story 5</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p6.jpg" alt="" height="250"><br>
+                  <h4>Story 6</h4>
+                </div><!-- /.span4 -->
+              </div><!-- /.row -->
+          </div>
+        </div>
+        <div class="item">
+         <div class="container" >
+              <!-- Three columns of text below the carousel -->
+              <div class="row">
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p7.jpg" alt="" height="250"><br>
+                  <h4>Story 7</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p8.jpg" alt="" height="250"><br>
+                  <h4>Story 8</h4>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <input class= "img-polaroid" type="image" src="../assets/img/examples/p9.jpg" alt="" height="250"><br>
+                  <h4>Story 9</h4>
+                </div><!-- /.span4 -->
+              </div><!-- /.row -->
+          </div>
+        </div>
+      
+      </div>
 
-    <hr/>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-    <br/>
-    <br/>
-      <!-- Three columns of text below the carousel -->
     <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span6 box-img" align="center">
+          <div class="span5"><h4>Select a path</h4></div>
+          <div class="row" align="center">
+            <div class="span3"> 
+              <input class= "img-polaroid" type="image" src="../assets/img/examples/p1.jpg" alt="" height="140"><br>
+              <P> Python</p>
+            </div>
+            <div class="span3"> 
+              <input class= "img-polaroid" type="image" src="../assets/img/examples/p3.jpg" alt="" height="140"><br>
+              <P> Java</p>
+            </div>
+          </div>
+
+        </div><!-- /.span4 -->
+        <div class="span2 box-img" align="center" padding-bottom:"120">
+          <h4>Select a Level</h4>
+          <div class="btn-group-vertical">
+              <a class="btn active">Drag&Drop</a>
+              <a class="btn">Easy</a>
+              <a class="btn">Medium</a>
+              <a class="btn">Hard</a>
+
+          </div>
+        </div><!-- /.span4 -->
+
+
+        <div class="span2">
+          <br>
+          <br>
+          <p><a class="btn btn-extralarge btn-custom1" href="#contact">Go!</a></p>
+          <p><a class="btn btn-small btn-primary" href="#contact">Revert to Classic</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+    
+
+
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2012 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
+
     </div><!-- /.container -->
 
 
@@ -385,11 +485,9 @@
     <script src="lib/angular/angular-resource.min.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/analytics.js"></script>
     <script src="../test/lib/angular/angular-mocks.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
+
+
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/bootstrap-transition.js"></script>
     <script src="../assets/js/bootstrap-alert.js"></script>
@@ -403,6 +501,6 @@
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>
-    <script>
-
+    
+  </body>
 </html>

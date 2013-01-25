@@ -59,4 +59,10 @@ function dndCtrl($scope) {
         return $scope.model.length == 0;
     }
 
+    $scope.check = function() {
+        if(true){
+            alert('correct answer!');
+        }
+    }
+
 }

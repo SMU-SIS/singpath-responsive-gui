@@ -4,6 +4,7 @@
     <link href="./css/dnd2_styles.css" rel="stylesheet">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/jquery.ui.touch-punch.min.js"></script> 
     <script src="./lib/angular/angular.min.js"></script>
     <script src="./js/angular-ui.js"></script>
     <script src="./js/multiSortable.js"></script>
@@ -37,6 +38,7 @@
         this.TaskController = function($scope) {
           $scope.changed = 'Unfortunately not';
 
+
           $scope.items = {
             todo: [
             ],
@@ -56,6 +58,9 @@
             $scope.changed = 'Yes, of course :)';
           }
 
+          if($scope.changed == 'Yes, of course :)'){
+            alert("123");
+          }
         };
 
       }).call(this);
