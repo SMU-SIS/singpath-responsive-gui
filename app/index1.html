@@ -16,10 +16,7 @@
     /* Padding below the footer and lighter body text */
 
     body{
-      padding-bottom: 40px;
-background-image:url('img/sbg.jpg');
-background-repeat:no-repeat;
-background-attachment:fixed;
+		padding-bottom: 40px;
 
     }
 
@@ -224,7 +221,7 @@ background-attachment:fixed;
         max-width: 40%;
         margin: 0 auto 20px;
       }
-      iframe{
+      #homeVideo{
         margin-top:10px;
         height: 300px;
         width: 90%;
@@ -296,7 +293,7 @@ background-attachment:fixed;
         line-height: 1.5;
       }
 
-      iframe{
+      #homeVideo{
         height: 90%px;
         width: 90%;
       }
@@ -316,7 +313,7 @@ background-attachment:fixed;
     }
 
     @media (max-width: 768px) {
-      iframe{
+      #homeVideo{
         height: 80%px;
         width: 80%;
       }
@@ -340,7 +337,7 @@ background-attachment:fixed;
     }
 
         @media (max-width: 600px) {
-      iframe{
+      #homeVideo{
         height: 80%px;
         width: 80%;
       }
@@ -387,7 +384,7 @@ background-attachment:fixed;
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">                                   
     <link rel="shortcut icon" href="../assets/ico/favicon.png">  
   </head>  
-  <body ng-controller="PlayerController" ng-click="log_event($event)" style="color: #fff">    
+  <body ng-controller="PlayerController" ng-click="log_event($event)">    
     <!-- NAVBAR
         ================================================== -->    
     <div class="navbar-wrapper">      
