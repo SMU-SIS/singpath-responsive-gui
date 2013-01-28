@@ -151,7 +151,7 @@
                     <div align="center">
                          <h5>#4. Let's play</h5>
 
-                        <input type="image" src="../assets/img/examples/Play_Button.png" name="image"
+                        <input type="image" href="#storyboard" src="../assets/img/examples/Play_Button.png" name="image"
                         height="100">
                     </div>
                 </div>
@@ -314,9 +314,9 @@
             <!-- /.span4 -->
             <div class="span3">
                 <label class="radio">
-                                                        <input style="visibility:hidden" type="radio" name="optionsRadios" id="optionsRadios0" value="option0" >
-                 <h4>#2. Select a Path</h4>
-                <div class="tabbable tabs-right well">
+                <input style="visibility:hidden" type="radio" name="optionsRadios" id="optionsRadios0" value="option0" >
+                <h4>#2. Select a Path</h4>
+                <div class="tabbable tabs-right">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#LlA" data-toggle="tab">Java</a>
                         </li>
@@ -344,9 +344,9 @@
             </div>
             <div class="span3">
 
-                             <label class="radio">
-                                                        <input style="visibility:hidden" type="radio" name="optionsRadios" id="optionsRadios0" value="option0" >
-             <h4>#3. Select a Level</h4>
+            <label class="radio">
+            <input style="visibility:hidden" type="radio" name="optionsRadios" id="optionsRadios0" value="option0" >
+            <h4>#3. Select a Level</h4>
               <div class="bs-docs-example">
                 <div class="dropdown clearfix">
                   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
@@ -363,7 +363,15 @@
         <!-- /.span4 -->
         <div class="span3">
             <h4>#4. Let's play</h4>
-            <input type="image" src="../assets/img/examples/Play_Button.png" name="image" height="150">
+			
+			<form name="myform" action="#storyboard" method="POST">
+
+				<br><input type="image" src="../assets/img/examples/Play_Button.png" name="image" height="100"><br>
+
+			</form>
+			
+			
+			
         </div>
         <!-- /.span4 -->
         <!-- /.row -->
