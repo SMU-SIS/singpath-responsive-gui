@@ -1,4 +1,3 @@
-
 // directive for a single list
 app.directive('dndList', function($parse) {
 
