@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <hr/><br/>
+   <body> 
+    <div class="container">
+        <div class="container ng-scope" id="main" ng-controller="dndCtrlq2">
+          {{validate()}}
+          <div class="row">
+            <div class="span4 offset4">
+                <ul id="single" dnd-list="model">
+                    <li class="alert alert-info nomargin"
+                        ng-repeat="item in model">{{item.value}}</li>
+                </ul>
+            </div>
+          </div>    
+        </div>
+    </div>
+  </body>
+</html>
