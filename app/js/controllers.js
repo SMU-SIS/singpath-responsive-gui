@@ -22,10 +22,6 @@ function IndexController($scope,$resource,$location,$window){
 
 }
 
-function Ctrl($scope) {
-  $scope.color = 'blue';
-}
-
 
 function PlayerController($scope,$resource){
         $scope.player = $resource('/jsonapi/player').get();        
