@@ -26,10 +26,10 @@ th, td { padding: 2px }
 <div ng-controller="CohortAnalysisController">
   <h3> Daily Cohort Analysis</h3>
   <input type="submit" value="Fetch Player Events" ng-click="get_players();">
-  <input type="submit" value="Analyze Player Events" ng-click="analyze_player_events();">
-  
+  <input type="submit" value="Analyze Player Events" ng-show="keys(player_events).length==players.length" ng-click="analyze_player_events();">
     {{players.length}} players to analyze<br>
     Fetched events for {{keys(player_events).length}}/{{players.length}}<br>
+    Check: {{keys(player_events).length==players.length}}<br>
     <select ng-model="event" ng-options="k as k for (k,v) in event_list"></select>
       Seleted Event: {{event}} 
         
@@ -43,12 +43,14 @@ th, td { padding: 2px }
     <table>
       <tr>
         <th>Join Date (players)</th>
+        <th>Cohort Return Rate </th>
         <th ng-repeat="header in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]">
           {{header}}
         </th>
       </tr>
       <tr ng-repeat="(join_day, theDaysLater) in cohort_event_count[event]">
           <td>{{join_day}} ({{players_by_join_day[join_day].length}})</td>
+          <td><b>{{return_vist_count[join_day]/players_by_join_day[join_day].length * 100 | number:2}}%</b></td>
           <td ng-repeat="days_later in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]">
           <!--<td ng-repeat="(days_later,theEvents) in theDaysLater">-->
             <span ng-show="keys(theDaysLater[days_later]).length>0">{{(keys(theDaysLater[days_later]).length/players_by_join_day[join_day].length)*100 | number:2}}% ({{keys(theDaysLater[days_later]).length}})
@@ -57,6 +59,9 @@ th, td { padding: 2px }
       </tr>
 
     </table>
+    Average Return Rate {{average_return_rate | number:2}}%<br>
+    Weighted Return Rate <b>{{total_returns_percentage | number:2}}%</b><br>
+
     Event list = {{event_list}}<br>
     
 </div>
@@ -71,7 +76,7 @@ th, td { padding: 2px }
     <div ng-controller="VerifyRequestController">
   
       <input type="submit" value="Analyze" ng-click="analyze();"><br>
-    
+      Showing from {{items[0].response_time}} to {{items[items.length-1].response_time}}   
       <ol>
         <li ng-repeat="(k,v) in result">
          {{k}} has {{result[k].vrs.length}} entries. <br>
@@ -82,16 +87,14 @@ th, td { padding: 2px }
          PRIVATE_FAIL {{result[k].PRIVATE_FAIL}}
         </li>
       </ol>
-      <!-- 
       <div ng-repeat="(k,v) in result">
         <ol>
-          Details for {{k}}
-          <li ng-repeat="entry in result[k].vrs">
-          {{entry.result}}, seconds {{entry.microseconds/1000000.0}}, {{entry.url}} , response_time {{entry.response_time}}
+          Details for <b>{{k}}</b>
+          <li ng-repeat="entry in result[k].vrs" ng-show="entry.result=='ERROR'">
+          {{entry.result}}, seconds {{entry.microseconds/1000000.0}}, {{entry.url}} , response_time {{entry.response_time}}, response <pre>{{entry.response.errors}}</pre>
           </li>
         </ol>
       </div>
-    -->
 
     </div>
   </div>
@@ -99,7 +102,8 @@ th, td { padding: 2px }
   <div ng-controller="GameResultController" ng-init="model='gameresult';">
     
     Game Results: Count {{items.length}}<br>
-    <input type="submit" value="Append List" ng-click="append_list()"><br>
+    <input type="submit" value="Analyze 100 More Game Results" ng-click="append_list()">
+
     Analysis:
     
     <ol>
@@ -117,6 +121,28 @@ th, td { padding: 2px }
   -->
     
   </div>
+  <div ng-controller="JsonRecordController" ng-init="fetch();">
+   
+    <table>
+      <tr><th ng-repeat="header in ['Date', 'DAU', 'MAU', 'DAU/MAU']">
+          {{header}}</th>
+      </tr>
+      <tr ng-repeat="(k,v) in items.daus">
+          <td>{{k}}</td>
+          <td>{{v}}</td>
+          <td>{{items.maus[k]}}</td>
+          <td>{{items.daumaus[k]*100 | number:2}}%</td>
+      </tr>
+    </table>     
+    <ol>
+      <li ng-repeat="(k,v) in items.daus">
+          Date {{k}}, DAU {{v}}, MAU {{items.maus[k]}}, DAUMAU {{items.daumaus[k]*100 | number:2}}%
+      </li>
+    </ol>
+
+  </div>
+
+
 
   <div ng-controller="GenericRestController" ng-init="model='playerpercentiles';">
     
@@ -156,6 +182,21 @@ th, td { padding: 2px }
     <ol>
       <li ng-repeat="entry in items">
           {{entry}}
+      </li>
+    </ol>
+    
+  </div>
+
+    <div ng-controller="GenericRestController" ng-init="model='challengetracking';">
+    
+    Challenge Tracking: {{items.length}}<br>
+    <input type="submit" value="List" ng-click="append_list()"><br>
+    
+    <ol>
+      <li ng-repeat="entry in items">
+         {{entry}}, player {{entry.player}}, challenge {{entry.challenge}}
+         <div ng-controller="GenericRestController" ng-init="model='player';load(entry.player)">player {{item}}
+         </div>
       </li>
     </ol>
     
