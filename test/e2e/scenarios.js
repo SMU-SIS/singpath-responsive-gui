@@ -67,34 +67,6 @@ describe('ViTech provided tests for index loaded partials', function() {
   });
 
 
-/*
-  it('should render quests when user navigates to #quests', function() {
-      
-      browser().navigateTo('#quests');
-      
-      expect(browser().location().url()).toBe("/quests");
-      //You can select all the text from all h5 or any other html element
-      expect(element('h5').text()).
-        toMatch("Pick a Story");
-      if (pauseAll) pause();
-  });
-*/
-/*
- it('should render practice when user navigates to #practice', function() {
-      browser().navigateTo('#practice');
-      expect(browser().location().url()).toBe("/practice");
-      
-      //Example element <ul id="sortable1" class="connectedSortable">
-      //You can select by id
-      expect(element('#sortable1').text()).
-        toMatch("Drag from here.");
-      //You can select by class
-      expect(element('.connectedSortable').text()).
-        toMatch("Drag from here.");
-      
-      if (pauseAll) pause();
-  });
-*/
 
 });
 
